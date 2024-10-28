@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Map Styles */
+.leaflet-container {
+  @apply !bg-white;
+  border-radius: 1rem;
+}
+
+.leaflet-tile {
+  filter: brightness(105%) contrast(95%) !important;
+}
+
+.leaflet-control-zoom,
+.leaflet-control-attribution {
+  @apply !hidden;
+}
+
+.leaflet-popup-content-wrapper {
+  @apply !bg-transparent !shadow-none !rounded-none !p-0;
+  width: auto !important;
+}
+
+.leaflet-popup-tip,
+.leaflet-popup-content {
+  @apply !bg-transparent !shadow-none !m-0 !border-0;
+  width: auto !important;
+}
+
+.leaflet-popup {
+  @apply !m-0;
+}
+
+/* Custom Marker Icon */
+.custom-marker-icon {
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+.custom-marker-icon .marker-svg {
+  transform: scale(1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-marker-icon:hover .marker-svg {
+  transform: scale(1.15);
+}
+
+/* Event Card Styles */
+.event-card {
+  @apply bg-white p-4 sm:p-8 rounded-2xl border border-zinc-200/80 shadow-sm;
+  transition: all 0.2s ease-in-out;
+}
+
+.event-card:hover {
+  @apply border-zinc-300/80 shadow-md;
+}
+
+/* Events List */
+.events-list {
+  @apply space-y-4 p-4;
+  max-height: calc(100vh - 12rem);
+  overflow-y: auto;
+}
+
+.events-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.events-list::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.events-list::-webkit-scrollbar-thumb {
+  @apply bg-zinc-200 rounded-full;
+}
+
+/* DatePicker Styles */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker {
+  @apply bg-white border border-gray-200 rounded-xl shadow-lg !important;
+}
+
+.react-datepicker__header {
+  @apply bg-gray-50 border-gray-200 rounded-t-xl !important;
+}
+
+.react-datepicker__current-month {
+  @apply text-gray-900 !important;
+}
+
+.react-datepicker__day {
+  @apply text-gray-900 hover:bg-blue-50 !important;
+}
+
+.react-datepicker__day--selected {
+  @apply bg-blue-600 text-white hover:bg-blue-700 !important;
+}
+
+.react-datepicker__time-container {
+  @apply border-l border-gray-200 !important;
+}
+
+.react-datepicker__time-list-item--selected {
+  @apply bg-blue-600 !important;
+}
+
+/* Hide number input spinners */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Custom Popup Styles */
+.custom-popup .leaflet-popup-content {
+  margin: 0 !important;
+  min-width: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .custom-popup {
+    width: calc(100vw - 3rem) !important;
+  }
+}
